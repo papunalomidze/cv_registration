@@ -25,7 +25,7 @@
                 <div>
                     <h2>სახელი</h2>
                     <div>
-                        <input class="name">
+                        <input class="name" id="name">
                     </div>
                     <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     
@@ -33,7 +33,7 @@
             
                 <div>
                     <h2>გვარი</h2>
-                    <input class="surname">
+                    <input class="surname" id="surName">
                     <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                 </div>
             </div>
@@ -41,7 +41,8 @@
             <div class="photo">
                 <h2>
                     პირადი ფოტოს ატვირთვა 
-                    <button class="btn">ატვირთვა</button>
+                    <input type="file" name="photo" id="photo" class="fileUp">
+                    <button class="btn" id="btn" onclick="document.getElementById('photo').click()">ატვირთვა</button>
                 </h2>
             </div>
 
@@ -67,10 +68,13 @@
         <button class="next">შემდეგი</button>
     </div>
     <div class="cv">
-        <h1 class="cvName">asd</h1>
+        <h1 class="cvName">
+             <span id="cvName"></span>
+             <span id="cvSurName"></span>
+        </h1>
         <p class="cvMail">mail</p>
         <p class="cvNum">number</p>
-        <img src="none" alt="picture" class="updatedPic" >
+        <img src="" alt="picture" class="updatedPic" id="updatedPic" >
         <h2 class="head">about me</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus expedita nece

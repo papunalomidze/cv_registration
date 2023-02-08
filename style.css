@@ -79,9 +79,10 @@ hr{
 .name, .surname {
     width: 370px;
     height: 30px;
-    /* margin: 10px 0px 10px 0px; */
 }
-
+.fileUp{
+    display: none;
+}
 .photo button{
     background-color: #0E80BF;
     border-radius: 4px;
