@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Neue;
+    src: url(HelveticaNeue.ttc);
+}
+
+*,::after,::before{
+    box-sizing: border-box;
+    padding: 0;
+    font-family: Neue;
+}
+
+.cv{
+    width: 30%;
+    margin-left: 5%;
+}
+
+.cv h1{
+    color: #F93B1D;
+    font-weight: bold;
+    font-size: 34px;
+    
+}
+
+.cv p{
+    font-size: 16px;
+}
+
+.head{
+    color: #F93B1D;
+    font-weight: bold;
+    font-size: 18px;
+}
+.updatedPic{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 130px;
+    background-color: aqua;
+    display: none;
+}
+
+.cvMail, .cvNum, .cvWork, .cvStudy{
+    margin: 0px;
+}
+
+.cvWorkDate, .cvStudyDate{
+    margin: 0;
+    color: #909090;
+}
+
+.hrCv{
+    width: 100%;
+    margin: 0;
+}
+
+.logo{
+    position: absolute;
+    right: 40%;
+    bottom: 5%;
+}

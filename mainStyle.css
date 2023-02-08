@@ -1,0 +1,59 @@
+@font-face {
+    font-family:Neue;
+    src: url(HelveticaNeue.ttc);
+}
+
+*,::after,::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Neue;
+} 
+
+body{
+    background-image: url(shutterstock_21897737431.png);
+    width: 1920px;
+    height: 1080px;
+}
+
+div{
+    width: 1920px;
+    height: 1080px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    position: absolute;
+}
+
+.logoBerry{
+    left: 0;
+    top: 0;
+    transform: translate(50%, 50%);
+}
+
+hr{
+    position: absolute;
+    left: 5%;
+    top: 6%;
+    width: 90%;
+    background-color: #1A1A1A;
+}
+
+.logoBack{
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+}
+
+button{
+    color: white;
+    background-color: #1A1A1A;
+    width: 464px;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+}
