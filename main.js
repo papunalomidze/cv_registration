@@ -1,3 +1,4 @@
+// go to home page
 let backMain = document.getElementById("backMain").addEventListener("click", backToMain);
 
 function backToMain(){
@@ -6,43 +7,60 @@ function backToMain(){
     document.getElementById("updatedPic").style.display = "none"
 }
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("name").value = sessionStorage.getItem("name")
-    document.getElementById("cvName").innerHTML = sessionStorage.getItem("name")
-
-    document.getElementById("surName").value = sessionStorage.getItem("surName")
-    document.getElementById("cvSurName").innerHTML = sessionStorage.getItem("surName")
-    
-    
-    document.getElementById("updatedPic").setAttribute("src",sessionStorage.getItem("image"));
-    
-    if ("image" in sessionStorage){
-        document.getElementById("updatedPic").style.display = "block";
+// valid
+function moreThanTwo(inpval, place, inp){
+    if (inpval.length == 1){
+        document.getElementById(place).innerHTML = "<iconify-icon icon='ph:warning-fill' class='nameWarning'></iconify-icon>";
+        document.getElementById(inp).style.borderColor = "red";
+    }else if (inpval.length > 1 ){
+        document.getElementById(place).innerHTML = "<i class='ai-circle-check-fill' ></i>";
     }
-   
-    
+}
 
-})
 
-let nameInp = document.getElementById("name");
+
+// name
+let nameInp = document.getElementById("nameInp");
 nameInp.oninput = nameShow;
 
 
 function nameShow() {
-    document.getElementById("cvName").innerHTML = nameInp.value
-    sessionStorage.setItem("name", nameInp.value)
+    let inpVal = document.getElementById("cvName").innerHTML;
+    inpVal = nameInp.value;
+    moreThanTwo(inpVal, 'nameError', "nameInp");
+    sessionStorage.setItem("name", inpVal, "nameInp");
 }
 
-
+// surname
 let surNameInp = document.getElementById("surName");
-surNameInp.oninput = surNameShow
+surNameInp.oninput = surNameShow;
 
 function surNameShow(){
-    document.getElementById("cvSurName").innerHTML = surNameInp.value
-    sessionStorage.setItem("surName", surNameInp.value)
+    let inpVal = document.getElementById("cvSurName").innerHTML;
+    inpVal = surNameInp.value
+    moreThanTwo(inpVal, "surNameError", "surName");
+    sessionStorage.setItem("surName", surNameInp.value);
 }
 
+// mail
+let mailInp = document.getElementById("mailInp");
+mailInp.oninput = mailShow;
+
+function mailShow(){
+    document.getElementById("cvMail").innerHTML = mailInp.value;
+    sessionStorage.setItem("mail", mailInp.value);
+}
+
+// number
+let number = document.getElementById("numInp");
+numInp.oninput = numShow;
+
+function numShow(){
+    document.getElementById("cvNum").innerHTML = numInp.value;
+    sessionStorage.setItem("number", numInp.value);
+}
+
+// image
 
 document.getElementById("photo").addEventListener("change", function(){
     const reader = new FileReader();
@@ -56,9 +74,20 @@ document.getElementById("photo").addEventListener("change", function(){
 document.addEventListener("change", () =>{
     const imageUrl = sessionStorage.getItem("image");
 
-    document.getElementById("updatedPic").setAttribute("src",imageUrl)
+    document.getElementById("updatedPic").setAttribute("src",imageUrl);
     if ("image" in sessionStorage){
         document.getElementById("updatedPic").style.display = "block";
     }
     
 })
+
+// info
+let infoInp = document.getElementById("infoInp");
+infoInp.oninput = infoShow;
+
+function infoShow(){
+    document.getElementById("cvUserInfo").innerHTML = infoInp.value;
+    sessionStorage.setItem("info", infoInp.value);
+    document.getElementById("infoHead").style.display = "block"
+    document.getElementById("hrCvInfo").style.display = "block"
+}

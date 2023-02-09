@@ -25,7 +25,8 @@
                 <div>
                     <h2>სახელი</h2>
                     <div>
-                        <input class="name" id="name">
+                        <input class="nameCl" id="nameInp">
+                        <span id="nameError"></span>
                     </div>
                     <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     
@@ -34,6 +35,7 @@
                 <div>
                     <h2>გვარი</h2>
                     <input class="surname" id="surName">
+                    <span id="surNameError"></span>
                     <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                 </div>
             </div>
@@ -48,19 +50,19 @@
 
             <div class="info">
                 <h2>ჩემ შესახებ (არასავალდებულო)</h2>
-                <textarea class="infoInp" style="resize: none;">    
+                <textarea class="infoInp" style="resize: none" id="infoInp">    
                 </textarea>
             </div>
 
             <div class="mail">
                 <h2>ელ.ფოსტა</h2>
-                <input class="mailInp">
+                <input class="mailInp" type="email" id="mailInp">
                 <p>უნდა მთავრდებოდეს @redberry.ge-ით</p>
             </div>
 
-            <div class="number">
+            <div class="number" >
                 <h2>მობილურის ნომერი</h2>
-                <input class="numInp">
+                <input class="numInp" id="numInp">
                 <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
             </div>
         </div>
@@ -72,16 +74,18 @@
              <span id="cvName"></span>
              <span id="cvSurName"></span>
         </h1>
-        <p class="cvMail">mail</p>
-        <p class="cvNum">number</p>
+
+        <p class="cvMail" id="cvMail">mail</p>
+
+        <p class="cvNum" id="cvNum"></p>
+
         <img src="" alt="picture" class="updatedPic" id="updatedPic" >
-        <h2 class="head">about me</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus expedita nece
-            ssitatibus amet beatae enim mollitia soluta error eum doloremque explicabo quae persp
-            iciatis iure deleniti similique, voluptas molestias labore nesciunt hic.
-        </p>
-        <hr class="hrCv">
+
+        <h2 class="head" id="infoHead">ჩემ შესახებ</h2>
+        <p id="cvUserInfo"></p>
+
+        <hr class="hrCv" id="hrCvInfo">
+
         <div>
             <h2 class="head">work</h2>
             <p class="cvWork">woking exp</p>
@@ -91,9 +95,11 @@
             cum animi distinctio adipisci neque, provident, placeat dolorum 
             accusamus debitis ad nulla
             necessitatibus officiis ut officia rem quaerat quia tempora!
-        </p>
+            </p>
         </div>
-        <hr class="hrCv">
+
+        <hr class="hrCvWork">
+
         <div>
             <h2 class="head">study</h2>
             <p class="cvStudy">study</p>
@@ -111,6 +117,7 @@
     </div>
 
     <script src="main.js"></script>
+    <script src="saveRestore.js" type="module"></script>
 </body>
 </html>
 
