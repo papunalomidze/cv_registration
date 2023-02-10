@@ -7,17 +7,6 @@ function backToMain(){
     document.getElementById("updatedPic").style.display = "none"
 }
 
-// valid
-function moreThanTwo(inpval, place, inp){
-    if (inpval.length == 1){
-        document.getElementById(place).innerHTML = "<iconify-icon icon='ph:warning-fill' class='nameWarning'></iconify-icon>";
-        document.getElementById(inp).style.borderColor = "red";
-    }else if (inpval.length > 1 ){
-        document.getElementById(place).innerHTML = "<i class='ai-circle-check-fill' ></i>";
-    }
-}
-
-
 
 // name
 let nameInp = document.getElementById("nameInp");
@@ -25,10 +14,11 @@ nameInp.oninput = nameShow;
 
 
 function nameShow() {
+    document.getElementById("cvName").innerHTML = nameInp.value;
     let inpVal = document.getElementById("cvName").innerHTML;
-    inpVal = nameInp.value;
-    moreThanTwo(inpVal, 'nameError', "nameInp");
-    sessionStorage.setItem("name", inpVal, "nameInp");
+
+    sessionStorage.setItem("name", inpVal);
+    valLang('nameError', "nameInp")
 }
 
 // surname
@@ -36,10 +26,11 @@ let surNameInp = document.getElementById("surName");
 surNameInp.oninput = surNameShow;
 
 function surNameShow(){
-    let inpVal = document.getElementById("cvSurName").innerHTML;
-    inpVal = surNameInp.value
-    moreThanTwo(inpVal, "surNameError", "surName");
+    document.getElementById("cvSurName").innerHTML = surNameInp.value;
+    let inpVal = document.getElementById("cvSurName").innerHTML
+    
     sessionStorage.setItem("surName", surNameInp.value);
+    valLang('surNameError', "surName")
 }
 
 // mail
@@ -49,6 +40,7 @@ mailInp.oninput = mailShow;
 function mailShow(){
     document.getElementById("cvMail").innerHTML = mailInp.value;
     sessionStorage.setItem("mail", mailInp.value);
+    validMail("mailInp", "mailError", "mailInp")
 }
 
 // number
@@ -58,6 +50,7 @@ numInp.oninput = numShow;
 function numShow(){
     document.getElementById("cvNum").innerHTML = numInp.value;
     sessionStorage.setItem("number", numInp.value);
+    validNum()
 }
 
 // image
@@ -78,7 +71,6 @@ document.addEventListener("change", () =>{
     if ("image" in sessionStorage){
         document.getElementById("updatedPic").style.display = "block";
     }
-    
 })
 
 // info
@@ -90,4 +82,17 @@ function infoShow(){
     sessionStorage.setItem("info", infoInp.value);
     document.getElementById("infoHead").style.display = "block"
     document.getElementById("hrCvInfo").style.display = "block"
+    validInfo()
+    
+    if(infoInp.value == ""){
+        document.getElementById("infoHead").style.display = "none"
+    }
+}
+
+// next btn
+let nextBtn = document.getElementById("nextPage");
+nextBtn.onclick = nextPage;
+
+function nextPage(){
+    window.location.replace("experience.html");
 }

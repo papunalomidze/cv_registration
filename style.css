@@ -68,11 +68,11 @@ hr{
     margin: 0;
     display:inline-block;
     position: relative;
-    transform: translateX(-200%);
-    
+    transform: translate(-200%);
 }
 
 .nameWarning{
+    position: relative;
     color: red;
 }
 
@@ -95,13 +95,13 @@ hr{
 }
 
 .infoInp{
-    width: 100%;
+    width: 95%;
     height: 150px;
     margin-top: 10px;
     border-radius: 4px;
 }
 .mailInp, .numInp{
-    width: 100%;
+    width: 95%;
     height: 30px;
     margin-top: 10px;
     border-radius: 4px;
