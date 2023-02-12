@@ -96,20 +96,31 @@ function validInfoPg(){
 
 
 function valTwoChar(val, place, inpBox){
-    if(val.length > 1){
-        document.getElementById(place).innerHTML = "<i class='ai-circle-check-fill' ></i>";
-        document.getElementById(inpBox).style.borderColor = "#98E37E";
-        return true
-    }else{
+    if(val == null){
         document.getElementById(place).innerHTML = "<iconify-icon icon='ph:warning-fill' class='nameWarning'></iconify-icon>";
         document.getElementById(inpBox).style.borderColor = "#EF5050";
         return false
+    }else if(val.length > 1){
+        document.getElementById(place).innerHTML = "<i class='ai-circle-check-fill' ></i>";
+        document.getElementById(inpBox).style.borderColor = "#98E37E";
+        return true
+    }else if (val.length == 0 || val.length == 1){
+        document.getElementById(place).innerHTML = "<iconify-icon icon='ph:warning-fill' class='nameWarning'></iconify-icon>";
+        document.getElementById(inpBox).style.borderColor = "#EF5050";
+        return false
+    }else {
+        document.getElementById(place).innerHTML = "<i class='ai-circle-check-fill' ></i>";
     }
 }
 
 
 function valArea(val, place, inpBox){
-    if(val.length > 1){
+    if(val == null){
+        document.getElementById(place).innerHTML = "<iconify-icon icon='ph:warning-fill' class='nameWarning'></iconify-icon>";
+        document.getElementById(inpBox).style.borderColor = "#EF5050";
+        return false
+    }else if (val.length > 1 ){
+        
         document.getElementById(place).innerHTML =  " "
         document.getElementById(inpBox).style.borderColor = "#98E37E";
         return true
@@ -131,7 +142,11 @@ valArea(sessionStorage.getItem("workDescription"), "descError", "WDescription")
 
 
 function validDate(val, place, inpBox){
-    if(val.length == 10){
+    if(val == null){
+        document.getElementById(place).innerHTML = "<iconify-icon icon='ph:warning-fill' class='nameWarning'></iconify-icon>";
+        document.getElementById(inpBox).style.borderColor = "#EF5050";
+        return false
+    }else if(val.length == 10){
         document.getElementById(place).innerHTML =  " "
         document.getElementById(inpBox).style.borderColor = "#98E37E";
         return true
@@ -140,4 +155,22 @@ function validDate(val, place, inpBox){
         document.getElementById(inpBox).style.borderColor = "#EF5050";
         return false
     }
+}
+
+function validEdu(){
+    valTwoChar(sessionStorage.getItem("study"), "studyError", "study");
+    validDate(sessionStorage.getItem("degDate"), "degDateError", "degreedate")
+    valArea(sessionStorage.getItem("degDescription"), "degDescriptionError", "degreeDescription");
+    
+    return validDate(sessionStorage.getItem("degDate"), "degDateError", "degreedate") && valTwoChar(sessionStorage.getItem("study"), "studyError", "study") && 
+    valArea(sessionStorage.getItem("degDescription"), "degDescriptionError", "degreeDescription")
+}
+
+// go to home page
+let backMain = document.getElementById("backMain").addEventListener("click", backToMain);
+
+function backToMain(){
+    window.location.replace("index.html");
+    sessionStorage.clear()
+    document.getElementById("updatedPic").style.display = "none"
 }

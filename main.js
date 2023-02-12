@@ -1,12 +1,3 @@
-// go to home page
-let backMain = document.getElementById("backMain").addEventListener("click", backToMain);
-
-function backToMain(){
-    window.location.replace("index.html");
-    sessionStorage.clear()
-    document.getElementById("updatedPic").style.display = "none"
-}
-
 
 // name
 let nameInp = document.getElementById("nameInp");
@@ -36,6 +27,7 @@ let mailInp = document.getElementById("mailInp");
 mailInp.oninput = mailShow;
 
 function mailShow(){
+    document.getElementById("mailIcon").innerHTML = '<img src="pictures\\Vector.png" ></img>'
     document.getElementById("cvMail").innerHTML = mailInp.value;
     sessionStorage.setItem("mail", mailInp.value);
     validMail("mailInp", "mailError", "mailInp")
@@ -46,6 +38,8 @@ let number = document.getElementById("numInp");
 numInp.oninput = numShow;
 
 function numShow(){
+    document.getElementById("numIcon").innerHTML = '<img src="pictures\\vectorphone.png" ></img>'
+    console.log(sessionStorage.getItem("number"))
     document.getElementById("cvNum").innerHTML = numInp.value;
     sessionStorage.setItem("number", numInp.value);
     validNum()

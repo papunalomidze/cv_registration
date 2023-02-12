@@ -1,12 +1,14 @@
 @font-face {
     font-family: Neue;
     src: url(HelveticaNeue.ttc);
+    
 }
 
 *,::after,::before{
     box-sizing: border-box;
     padding: 0;
     font-family: Neue;
+    word-wrap: break-word
 }
 
 .cv{
@@ -62,5 +64,6 @@
 .logo{
     position: absolute;
     right: 40%;
-    bottom: 5%;
+    bottom: 10%;
+    transform: translateY(50%);
 }

@@ -6,7 +6,9 @@ function wPositionShow(){
     sessionStorage.setItem("position", wPosition1.value);
     let val = sessionStorage.getItem("position")
     document.getElementById("expHead").style.display = "block"
-    valTwoChar(val, "posError", "wPosition")
+    document.getElementById("cvWork").style.display = "block"
+    valTwoChar(sessionStorage.getItem("position"), "posError", "wPosition")
+   
 }
 
 let employer = document.getElementById("employer");
@@ -16,8 +18,8 @@ function employerShow(){
     document.getElementById("cvWork").innerHTML = wPosition1.value + ", " + employer.value;
     sessionStorage.setItem("employer", employer.value);
     document.getElementById("expHead").style.display = "block"
-    let val = sessionStorage.getItem("employer")
-    valTwoChar(val, "emplError", "employer")
+    document.getElementById("cvWork").style.display = "block"
+    valTwoChar(sessionStorage.getItem("employer"), "emplError", "employer")
 }
 
 // work dates
@@ -49,14 +51,16 @@ function workDescShow(){
     document.getElementById("workDescription").innerHTML = workDescription.value;
     sessionStorage.setItem("workDescription", workDescription.value);
     document.getElementById("expHead").style.display = "block"
-    let val = sessionStorage.getItem("workDescription")
-    valArea(val, "descError", "WDescription")
+    valArea(sessionStorage.getItem("workDescription"), "descError", "WDescription")
 }
 
 // restore after refresh
 document.addEventListener("DOMContentLoaded", () => {
-    restoreCvExp()
-    restoreInpExp()
+    if (restoreCvExp() != undefined){
+        restoreCvExp()
+    }else if(restoreInpExp() != undefined){
+        restoreInpExp()
+    }
 })
 
 // back btn
@@ -73,4 +77,24 @@ nextBtn.onclick = nextPage;
 
 function nextPage(){
     validWork()
+    if(validWork()){
+        window.location.replace("education.html");
+    }
 }
+
+// more description
+let moredesc = document.getElementById("moreExp");
+moredesc.onclick = moreDescShow;
+
+
+function moreDescShow(){
+    let elem = document.querySelector("#forMore")
+    var clone = elem.cloneNode(true)
+    elem.after(clone)
+
+    // let elemCv = document.querySelector("#moreDescCv")
+    // let cloneCv = elem.cloneNode(true)
+    // elemCv.after(cloneCv)
+    
+}
+
