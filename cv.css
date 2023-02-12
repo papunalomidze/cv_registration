@@ -43,11 +43,13 @@
 
 .cvMail, .cvNum, .cvWork, .cvStudy{
     margin: 0px;
+    font-weight: bolder;
 }
 
 .cvWorkDate, .cvStudyDate{
     margin: 0;
     color: #909090;
+    font-style: italic;
 }
 
 .hrCv{

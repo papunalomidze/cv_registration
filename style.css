@@ -76,7 +76,11 @@ hr{
     color: red;
 }
 
+h2{
+    margin-bottom: 10px;
+}
 .nameCl, .surname {
+    
     width: 370px;
     height: 30px;
     border-radius: 4px;
@@ -86,6 +90,7 @@ hr{
 .fileUp{
     display: none;
 }
+
 .photo button{
     background-color: #0E80BF;
     border-radius: 4px;

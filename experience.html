@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="styleexp.css">
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
     <title>Document</title>
@@ -14,15 +15,60 @@
     <div class="form">
         <i class="ai-chevron-left" id="backMain"></i>
         <div class="heading">
-            <h1>პირადი ინფო</h1>
-            <p>1/3</p>
+            <h1>გამოცდილება</h1>
+            <p id="pageNum">2/3</p>
         </div>
         <hr>
 
         <div class="main">
+            <div>
+                <h2>თანამდებობა</h2>
+                <div>
+                    <input class="wPosition" id="wPosition">
+                    <span id="posError"></span>
+                </div>
+                <p>მინიმუმ 2 ასო</p>
+            </div>
+            
+            <div>
+                <h2>დამსაქმებელი</h2>
+                <input class="employer" id="employer">
+                <span id="emplError"></span>
+                <p>მინიმუმ 2 ასო</p>
+            </div>
 
+            <div class="dateCont">
+                <div>
+                    <h2>დაწყების რიცხვი</h2>
+                    <input type="date" class="startDate" id="workStartDate">
+                    <span id="sDateError"></span>
+                </div>
+    
+                <div>
+                    <h2>დამთავრების რიცხვი</h2>
+                    <input type="date" class="duedate" id="workDuedate">
+                    <span id="dDateError"></span>
+                </div>
+            </div>
+
+            <div>
+                <h2>აღწერა</h2>
+                <textarea class="description" style="resize: none" id="WDescription">
+                </textarea>
+                <span id="descError"></span>
+            </div>
+
+            <hr style="margin-left: 0px;">
+
+            <button class="moreExp" id="moreExp">მეტი გამოცდილების დამატება</button>
+            <div>
+                
+            </div>
+
+            <button class="backPage" id="backPage">უკან</button>
            
         </div>
+        
 
         <button class="next" id="nextPage">შემდეგი</button>
     </div>
@@ -44,15 +90,10 @@
         <hr class="hrCv" id="hrCvInfo">
 
         <div>
-            <h2 class="head">work</h2>
-            <p class="cvWork">woking exp</p>
-            <p class="cvWorkDate">date</p>
-            <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quo 
-            cum animi distinctio adipisci neque, provident, placeat dolorum 
-            accusamus debitis ad nulla
-            necessitatibus officiis ut officia rem quaerat quia tempora!
-            </p>
+            <h2 class="head" id="expHead">გამოცდილება</h2>
+            <p class="cvWork" id="cvWork"></p>
+            <p class="cvWorkDate" id="workDate"></p>
+            <p id="workDescription"></p>
         </div>
 
         <hr class="hrCvWork">
@@ -75,6 +116,7 @@
 
     <script src="saveRestore.js"></script>
     <script src="valid.js"></script>
+    <script src="exp.js"></script>
 </body>
 </html>
 

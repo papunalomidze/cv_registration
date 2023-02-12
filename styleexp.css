@@ -1,0 +1,55 @@
+.wPosition, .employer{
+    width: 95%;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.employer{
+    width: 95%;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.dateCont{
+    display: flex;
+    gap: 30px;
+    font-style: italic;
+    
+}
+
+.startDate, .duedate{
+    width: 400px;
+    height: 30px;
+    border-radius: 4px;
+    gap: 15px;
+}
+
+.description{
+    width: 95%;
+    height: 150px;
+    margin: 10px 0px;
+    border-radius: 4px;
+}
+
+.moreExp{
+    background-color: #62A1EB;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 15px 30px;
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+
+}
+
+.backPage{
+    background-color: #6B40E3;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 18px 60px 18px 60px;
+    position:absolute;
+    bottom: 5%;
+    left: 5%;
+}

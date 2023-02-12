@@ -15,9 +15,8 @@ nameInp.oninput = nameShow;
 
 function nameShow() {
     document.getElementById("cvName").innerHTML = nameInp.value;
-    let inpVal = document.getElementById("cvName").innerHTML;
 
-    sessionStorage.setItem("name", inpVal);
+    sessionStorage.setItem("name", nameInp.value);
     valLang('nameError', "nameInp")
 }
 
@@ -27,7 +26,6 @@ surNameInp.oninput = surNameShow;
 
 function surNameShow(){
     document.getElementById("cvSurName").innerHTML = surNameInp.value;
-    let inpVal = document.getElementById("cvSurName").innerHTML
     
     sessionStorage.setItem("surName", surNameInp.value);
     valLang('surNameError', "surName")
@@ -54,6 +52,9 @@ function numShow(){
 }
 
 // image
+document.getElementById("btn").addEventListener("click", function(){
+    document.getElementById("photoError").innerHTML = " ";
+})
 
 document.getElementById("photo").addEventListener("change", function(){
     const reader = new FileReader();
@@ -89,10 +90,19 @@ function infoShow(){
     }
 }
 
+// restore input
+document.addEventListener("DOMContentLoaded", () => {
+    restoreInp()
+})
+
 // next btn
 let nextBtn = document.getElementById("nextPage");
 nextBtn.onclick = nextPage;
 
 function nextPage(){
-    window.location.replace("experience.html");
+    validInfoPg()
+    if(validInfoPg()){
+        window.location.replace("experience.html");
+    }
 }
+
