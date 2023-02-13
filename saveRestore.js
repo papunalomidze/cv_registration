@@ -24,13 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //mobile number
-    document.getElementById("cvNum").innerHTML = numFormat(sessionStorage.getItem("number"));
+
+    if(numFormat(sessionStorage.getItem("number")) != undefined){
+        document.getElementById("cvNum").innerHTML = numFormat(sessionStorage.getItem("number"));
+
+    }
     if(sessionStorage.getItem("number") == null){
         document.getElementById("numIcon").innerHTML = ' '
+        return false
     }else{
         document.getElementById("numIcon").innerHTML = '<img src="pictures\\vectorphone.png" ></img>'
+        return true
     }
-    numFormat(sessionStorage.getItem("number"))
+    
     function numFormat(phone) {
         if (sessionStorage.getItem("number") != null){
             phone = phone.replace(/\+[^\d]/g, "");

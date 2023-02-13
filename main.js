@@ -39,7 +39,6 @@ numInp.oninput = numShow;
 
 function numShow(){
     document.getElementById("numIcon").innerHTML = '<img src="pictures\\vectorphone.png" ></img>'
-    console.log(sessionStorage.getItem("number"))
     document.getElementById("cvNum").innerHTML = numInp.value;
     sessionStorage.setItem("number", numInp.value);
     validNum()
