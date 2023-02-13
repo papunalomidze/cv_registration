@@ -43,7 +43,7 @@
     display: none;
 }
 
-.cvMail, .cvNum, .cvWork, .cvStudy{
+.cvMail, .cvNum, .cvWork, .cvStudy, .cvDegree{
     margin: 0px;
     font-weight: bolder;
 }
@@ -52,6 +52,10 @@
     margin: 0;
     color: #909090;
     font-style: italic;
+}
+
+.deg{
+    display: flex;
 }
 
 .hrCv{

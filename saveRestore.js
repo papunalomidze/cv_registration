@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("mailIcon").innerHTML = ' <img src="pictures\\Vector.png" ></img>'
     }
 
-    // mobile number
+    //mobile number
     document.getElementById("cvNum").innerHTML = numFormat(sessionStorage.getItem("number"));
     if(sessionStorage.getItem("number") == null){
         document.getElementById("numIcon").innerHTML = ' '
@@ -32,9 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     numFormat(sessionStorage.getItem("number"))
     function numFormat(phone) {
-    
-        phone = phone.replace(/\+[^\d]/g, "");
-        return  phone.replace(/(\d{3})(\d{3})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4 $5");
+        if (sessionStorage.getItem("number") != null){
+            phone = phone.replace(/\+[^\d]/g, "");
+            return  phone.replace(/(\d{3})(\d{3})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4 $5");
+
+        }
     }
 
 })
@@ -76,7 +78,11 @@ function restoreInpExp(){
 }
 
 function restoreCvDeg(){
-    document.getElementById("cvStudy").innerHTML = sessionStorage.getItem("study");
+    document.getElementById("cvStudy").innerHTML = sessionStorage.getItem("study")
+    if(sessionStorage.getItem("degree") != null){
+        document.getElementById("cvDegree").innerHTML =  ", " + sessionStorage.getItem("degree");
+    }
+    document.getElementById("degree").value = sessionStorage.getItem("degree")
     document.getElementById("cvStudyDate").innerHTML = sessionStorage.getItem("degDate");
     document.getElementById("degreeDescriptionCv").innerHTML = sessionStorage.getItem("degDescription");
     document.getElementById("eduHead").style.display = "block"

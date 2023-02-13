@@ -26,7 +26,7 @@
                 <div>
                     <h2>განათლება</h2>
                     <div>
-                        <input class="study" id="study">
+                        <input class="study" id="study" placeholder="სასწავლებელი">
                         <span id="studyError"></span>
                     </div>
                     <p>მინიმუმ 2 ასო</p>
@@ -35,7 +35,18 @@
                 <div class="degDate">
                     <div>
                         <h2>ხარისხი</h2>
-                        <select class="degree" id="degree"></select>
+                        <select class="degree" id="degree">
+                            <option value="" disabled selected hidden></option>
+                            <option value="საშუალო სკოლის დიპლომი">საშუალო სკოლის დიპლომი</option>
+                            <option value="ზოგადსაგანმანათლებლო">ზოგადსაგანმანათლებლო დიპლომი</option>
+                            <option value="ბაკალავრი">ბაკალავრი</option>
+                            <option value="მაგისტრი">მაგისტრი</option>
+                            <option value="დოქტორი">დოქტორი</option>
+                            <option value="ასოცირებული ხარისხი">ასოცირებული ხარისხი</option>
+                            <option value="სტუდენტი">სტუდენტი</option>
+                            <option value="კოლეჯი(ხარისიხს გარეშე)">კოლეჯი(ხარისიხს გარეშე)</option>
+                            <option value="სხვა">სხვა</option>
+                        </select>
                         <span id="degreeError"></span>
                     </div>
         
@@ -48,7 +59,7 @@
     
                 <div>
                     <h2>აღწერა</h2>
-                    <textarea class="degreeDescription" style="resize: none" id="degreeDescription">
+                    <textarea class="degreeDescription" style="resize: none" id="degreeDescription" placeholder="განათლების აღწერა">
                     </textarea>
                     <span id="degDescriptionError"></span>
                 </div>
@@ -105,7 +116,10 @@
 
         <div>
             <h2 class="head" id="eduHead">სასწავლებელი</h2>
-            <p class="cvStudy" id="cvStudy"></p>
+            <div class="deg">
+                <p class="cvStudy" id="cvStudy"></p>
+                <p class="cvDegree" id="cvDegree"></p>
+            </div>
             <p class="cvStudyDate" id="cvStudyDate"></p>
             <p id="degreeDescriptionCv"></p>
         </div>
@@ -117,6 +131,7 @@
     <script src="saveRestore.js"></script>
     <script src="valid.js"></script>
     <script src="education.js"></script>
+    <script src="data.js"></script>
     
 </body>
 </html>

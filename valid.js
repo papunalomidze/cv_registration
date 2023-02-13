@@ -157,13 +157,25 @@ function validDate(val, place, inpBox){
     }
 }
 
+function validChoice(val, place, inpBox){
+    if(val == null){
+        document.getElementById(place).innerHTML = "<iconify-icon icon='ph:warning-fill' class='nameWarning'></iconify-icon>";
+        document.getElementById(inpBox).style.borderColor = "#EF5050";
+        return false
+    }else {
+        document.getElementById(place).innerHTML =  " "
+        document.getElementById(inpBox).style.borderColor = "#98E37E";
+        return true
+    }
+}
+
 function validEdu(){
     valTwoChar(sessionStorage.getItem("study"), "studyError", "study");
     validDate(sessionStorage.getItem("degDate"), "degDateError", "degreedate")
     valArea(sessionStorage.getItem("degDescription"), "degDescriptionError", "degreeDescription");
-    
+    validChoice(sessionStorage.getItem("degree"), "degreeError", "degree")
     return validDate(sessionStorage.getItem("degDate"), "degDateError", "degreedate") && valTwoChar(sessionStorage.getItem("study"), "studyError", "study") && 
-    valArea(sessionStorage.getItem("degDescription"), "degDescriptionError", "degreeDescription")
+    valArea(sessionStorage.getItem("degDescription"), "degDescriptionError", "degreeDescription") && validChoice(sessionStorage.getItem("degree"), "degreeError", "degree")
 }
 
 // go to home page

@@ -3,12 +3,22 @@ study.oninput = studyShow;
 
 function studyShow(){
     
-    document.getElementById("cvStudy").innerHTML = study.value;
+    document.getElementById("cvStudy").innerHTML = study.value
     sessionStorage.setItem("study", study.value);
     let val = sessionStorage.getItem("study")
-    document.getElementById("eduHead").style.display = "block"
+    document.getElementById("eduHead").style.display ="block"
     valTwoChar(val, "studyError", "study")
 }
+
+let degree = document.getElementById("degree");
+degree.onchange = degreeShow;
+
+function degreeShow(){
+    document.getElementById("cvDegree").innerHTML = ", " +  degree.value;
+    sessionStorage.setItem("degree", degree.value);
+    console.log()
+}
+
 
 let degreedate = document.getElementById("degreedate");
 degreedate.oninput = degreeDateShow;
@@ -57,3 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
     restoreCvDeg()
     restoreInpEdu()
 })
+
+// const api_select = 'https://resume.redberryinternship.ge/api/degrees'
+// async function getchoice(){
+//     const responce = await (fetch(api_select));
+//     const coices = await responce.json()
+//     console.log(coices)
+// }
+
+// // getchoice()
+// document.getElementById("degree")
+
+// console.log(document.getElementById("degree").value)
